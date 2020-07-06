@@ -1,0 +1,41 @@
+<% if flash[:notice] %>
+  <p><%= flash[:notice] %></p>
+<% end %>
+
+<div class="container">
+<div class="row">
+<body>
+<div class="col-xs-6">
+<h1>Editing Book</h1>
+<%= form_for(@book, url:"/books/#{@book.id}") do |f| %>
+
+<% if @book.errors.any? %>
+    <div id="error_explanation" >
+      <h2><%= pluralize(@book.errors.count, "error") %> prohibited this book from being saved:</h2>
+
+      <ul>
+	    <%= @book.errors.full_messages.each do |message|%>
+	      <li><%= message %></li>
+	    <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+
+<h4>Title</h4>
+<%= f.text_field :title, :class => "w-550px" %>
+
+<h4>Body</h4>
+<%= f.text_area :body, :class => "w-550px" %>
+
+<button type="button" class="btn btn-primary btn-sm w-550px"><%= f.submit('Update Book') %></button>
+<% end %>
+
+<%= link_to 'Show', book_path(@book.id) %>
+<%= link_to 'Back', books_path %>
+<p class="text-right">CopyRight Infratop.inc</p>
+</div>
+</body>
+</div>
+</div>
+
