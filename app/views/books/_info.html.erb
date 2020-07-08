@@ -17,11 +17,11 @@
      <tr>
       <th>
         
+        <%= link_to edit_user_path(user.id) do %>
         <button type="button" class="btn btn-default btn-block">
-         <%= link_to edit_user_path(user.id) do %>
          <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
-         <% end %>
       </button>
+      <% end %>
       
     </th>
     </tr>
