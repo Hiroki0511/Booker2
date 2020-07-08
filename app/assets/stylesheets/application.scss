@@ -36,3 +36,16 @@ body {
 .text-dark{
 	color: #808080
 }
+input.follow_submit {
+  @extend .btn !optional;
+  @extend .btn-large !optional;
+  @extend .btn-primary !optional;
+  width: 260px !important;
+ }
+
+ input.Update_submit {
+  @extend .btn !optional;
+  @extend .btn-large !optional;
+  @extend .btn-primary !optional;
+  width: 550px !important;
+ }
