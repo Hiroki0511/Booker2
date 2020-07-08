@@ -28,7 +28,7 @@
 <h4>Body</h4>
 <%= f.text_area :body, :class => "w-550px" %>
 
-<button type="button" class="btn btn-primary btn-sm w-550px"><%= f.submit('Update Book') %></button>
+<%= f.submit "Update Book", class: "Update_submit" %>
 <% end %>
 
 <%= link_to 'Show', book_path(@book.id) %>
