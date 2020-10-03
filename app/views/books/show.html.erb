@@ -1,6 +1,7 @@
 <% if flash[:notice] %>
   <p><%= flash[:notice] %></p>
 <% end %>
+<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 
 <div class="container">
 <div class="row">
@@ -44,6 +45,25 @@
           </button>
         <% end %>
     </td>
+
+<td>
+    <% if @book.favorited_by?(current_user) %>
+      <li>
+        <%= link_to book_favorites_path(@book), method: :delete do %>
+        <i class="fa fa-heart" aria-hidden="true" style="color: red;"></i>
+        <%= @book.favorites.count %> いいね
+  <% end %>
+        </li>
+  <% else %>
+        <li>
+         <%= link_to book_favorites_path(@book), method: :post do %>
+           <i class="fa fa-heart-o" aria-hidden="true"></i>
+          <%= @book.favorites.count %> いいね
+  <% end %>
+</li>
+<% end %>
+</td>
+
   </tr>
   </tbody>
 </table>

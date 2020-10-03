@@ -7,5 +7,7 @@ Rails.application.routes.draw do
   #root 'users#index'
 
   resources :users, only: [:index, :edit, :update, :show]
-  resources :books, only: [:new, :create, :index, :show, :destroy, :edit, :update]
+  resources :books, only: [:new, :create, :index, :show, :destroy, :edit, :update] do
+  	resource :favorites, only: [:create, :destroy]
+  end
 end
